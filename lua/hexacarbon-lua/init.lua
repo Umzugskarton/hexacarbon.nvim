@@ -1,5 +1,5 @@
 local get_colors = function()
-	local colors_path = 'oxocarbon-lua.colors'
+	local colors_path = 'hexacarbon-lua.colors'
 	local background = vim.api.nvim_get_option('background')
 
 	if background == 'dark' then
@@ -13,7 +13,7 @@ local get_colors = function()
 end
 
 local set_terminal_colors = function(colors)
-	if vim.g.oxocarbon_lua_keep_terminal then
+	if vim.g.hexacarbon_lua_keep_terminal then
 		return
 	end
 
@@ -26,7 +26,7 @@ local set_terminal_colors = function(colors)
 end
 
 local conditional_italic = function()
-	if vim.g.oxocarbon_lua_disable_italic then
+	if vim.g.hexacarbon_lua_disable_italic then
 		return nil
 	else
 		return {'italic'}
@@ -34,7 +34,7 @@ local conditional_italic = function()
 end
 
 local conditional_bg = function(arg)
-	if vim.g.oxocarbon_lua_transparent then
+	if vim.g.hexacarbon_lua_transparent then
 		return 'none'
 	else
 		return arg
@@ -59,7 +59,7 @@ return {
 			return
 		end
 
-    vim.g.colors_name = 'oxocarbon-lua'
+    vim.g.colors_name = 'hexacarbon-lua'
 
 		vim.api.nvim_set_option('termguicolors', true)
 		set_terminal_colors(colors)
@@ -243,7 +243,10 @@ return {
     highlight('TSStrike', 11, none, {'strikethrough'})
     highlight('TSURI', 15, none, {'underline'})
     highlight('TSCurrentScope', none, none, {'bold'})
+    highlight('jsParen' , 14, none)
 
+    -- vimwiki 
+    highlight 
     -- neovim
     highlight('NvimInternalError', 1, 9)
     highlight('NormalFloat', 6, 17)
@@ -267,7 +270,7 @@ return {
     highlight('StatusCommand', 20, 1, {'underline'})
 
     -- telescope
-		if vim.g.oxocarbon_lua_alternative_telescope then
+		if vim.g.hexacarbon_lua_alternative_telescope then
 			highlight('TelescopeBorder', 4, none)
 			highlight('TelescopePromptNormal', 6, none)
 			highlight('TelescopePromptPrefix', 8, none)
