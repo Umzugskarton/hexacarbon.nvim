@@ -1,3 +1,6 @@
+vim.api.nvim_set_hl(0, "TSGroup, {link = "@group"})
+
+
 local get_colors = function()
 	local colors_path = 'hexacarbon-lua.colors'
 	local background = vim.api.nvim_get_option('background')
@@ -243,6 +246,16 @@ return {
     highlight('TSStrike', 11, none, {'strikethrough'})
     highlight('TSURI', 15, none, {'underline'})
     highlight('TSCurrentScope', none, none, {'bold'})
+    highlight('jsParen', 14, none)
+
+    -- vimwiki 
+    highlight('VimwikiListTodo', 13, none)
+    highlight('VimwikiHeader1', 8, none, {'bold'})
+    highlight('VimwikiHeader2', 9, none, {'bold'})
+    highlight('VimwikiHeader3', 9, none, {'bold'})
+    highlight('VimwikiHeader4', 9, none, {'bold'})
+    highlight('VimwikiHeader5', 9, none, {'bold'})
+    highlight('VimwikiHeader6', 9, none, {'bold'})
 
     -- neovim
     highlight('NvimInternalError', 1, 9)
